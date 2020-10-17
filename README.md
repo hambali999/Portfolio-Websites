@@ -14,6 +14,9 @@
 
 - <p style="color: red;">Share and contribute all your portfolio websites templates for open source, anyone, anywhere to use it :)</p>
 
+- <p style="color: red;">Basic, HTML, CSS, JS or even React, Angular or Vue :)</p>
+
+
 ## 🤔 How to contribute
 
 ****
