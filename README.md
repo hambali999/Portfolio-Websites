@@ -69,7 +69,23 @@ $ git push origin <add-your-branch-name>
 Finally, go to your repository in the browser and click on `compare and pull requests`.
 Then add a title and description to your pull request that explains your precious effort.
 
-<p> </p
-
-
-
+<p>Step 1:<br>
+ - Fork this Project on click the fork button on top right of the screen.<br>
+ Step 2 :<br>
+ - Clone the repo on your computer<br> 
+ <code>git clone <!-- link of the project--></code><br>
+ Navigate to the folder in your computer
+ <code>cd Portfolio-Websites</code><br>
+ <code>git checkout -b "any_suitable_branch_name"</code><br>
+ Step 3 :<br>
+ - Add your Portfolio Website Folder in the <em>Portfolio</em> Folder above.<br>
+ Step 4 :<br>
+ Now add this updation on github by typing  
+- <code>git add .
+git commit -m "Added Portfolio Website"
+git push -u orgin any_suitable_branch_name</code><br>
+Step 5 :<br>
+- Click on the pull request appearing on the folder of your forked repo.<br>
+Step 6 :<br>
+- That's it enjoy<br> 
+ </p>
