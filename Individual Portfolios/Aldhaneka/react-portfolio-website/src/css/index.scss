@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@mixin flex($flex, $fd, $jc, $ai) {
+    display: $flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+#root {
+    width: 100%;
+    height: 100vh;
+    background: #020122;
+    color: white;
+    overflow: hidden;
+    div.rootChild {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+main.main {
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+#header {
+    width: 100%;
+    height: auto;
+    box-sizing: none;
+    padding: 100px 0;
+    padding-top: 200px;
+    @include flex(flex, row, flex-start, center);
+    .container {
+        margin-left: 100px;
+        .introduction {
+            h1 {
+                font-size: 50px;
+                font-weight: 500;
+                @each $color in yellow, red, green, blue {
+                    @if  $color == red {
+                        .#{$color}-text {color: rgb(255, 77, 77);}
+                    }
+                    @else if $color == blue {
+                        .#{$color}-text {color:rgb(0, 119, 255);}
+                    }
+                    @else if $color == green {
+                        .#{$color}-text {color: rgb(149, 235, 20);}
+                    }
+                    @else {.#{$color}-text {color: $color;}}
+                }
+            }
+        }
+        p {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 20px;
+            color: rgb(196, 196, 196);
+        }
+        a {
+            box-sizing: border-box !important;
+            padding: 15px 35px;
+            background-color: rgb(0, 132, 255);
+            margin-right: 20px;
+            color: white;
+            font-size: 20px;
+            border: 0px solid transparent;
+            border-radius:5px;
+            cursor: pointer;
+            transition: .2s;
+            text-decoration: none;
+            &:hover {
+                background-color: rgb(0, 95, 184);
+            }
+        }
+        a.white {
+            @extend a;
+            background-color: transparent;
+            border: 2px solid rgb(0, 132, 255);
+            color: rgb(0, 132, 255);
+            &:hover {
+                background: rgb(0, 132, 255);
+                color: white;
+            }
+        }
+    }
+}
+
+.headerNavbar {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: #020122;
+    nav {
+        width: 100%;
+        height: 100%;
+        @include flex(flex, row, space-between, center);
+        padding: 0 100px;
+        .logo {
+            font-weight: 400;
+        }
+        ul {
+            @include flex(flex, row, space-between, center);
+            li {
+                margin: 0 20px;
+                list-style: none;
+                a {
+                    color: rgb(182, 182, 182);
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#about {
+
+    box-sizing: none;
+    width: 100%;
+    height: auto;
+    padding: 100px 50px;
+    padding-left: 100px;
+    @include flex(flex, row, space-between, center);
+    .container {
+        width: 100%;
+        h4 {
+            font-size: 30px;
+        }
+        p {
+            margin-top: 30px;
+            width: 70%;
+            word-wrap: break-word;
+            color: rgb(216, 216, 216);
+        }
+        .skills {
+            margin-top: 30px;
+            @include flex(flex, row, space-between, center);
+            flex-wrap: wrap;
+            width: 550px;
+            font-size: 50px;
+            i:hover {
+                color: rgb(194, 194, 194);
+            }
+        }
+    }
+}
+
+// Projects section
+#Projects {
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    @include flex(flex, row, space-between, center);
+            flex-wrap: wrap;
+}
+
+.card {
+    width: 500px;
+    margin: 20px 0;
+    .imageWrapper {
+        width: 100%;
+        height: 410px;
+        position: relative;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .bg {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.445);
+            opacity: 0;
+            transition: .3s;
+            @include flex(flex, row,center, center);
+            a.View {
+                z-index: 99;
+                font-size: 20px;
+            }
+        }
+        &:hover {
+            .bg {
+                opacity: 1;
+            }
+        }
+    }
+    h3.title {
+        margin-top: 20px;
+        font-size: 30px;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    p.tag {
+        margin-top: 10px;
+        color: rgb(194, 194, 194);
+    }
+}
+// Projects section
+
+footer {
+    margin-top: 50px;
+    width: 100%;
+    padding: 0 100px;
+    @include flex(flex, column, center, center);
+    .top {
+        width: 100%;
+        @include flex(flex, column, flex-start, center);
+        .contact {
+            width: 100%;
+            @include flex(flex, row, space-between, center);
+            flex-wrap: wrap;
+            h2 {
+                font-size: 40px;
+            }
+            a {
+                color: white;
+                padding: 20px 40px;
+                border-radius: 5px;
+                background:  rgb(0, 132, 255);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: none;
+                &:hover {
+                    background:rgb(0, 109, 211)
+                }
+            }
+        }
+    .socialMedia {
+        margin-top: 25px;
+        width: 100%;
+        font-size: 30px;
+        a {
+            margin-right: 30px;
+            color: rgb(185, 185, 185);
+            &:hover {
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
+    }
+    .bottom {
+        margin-top: 100px;
+        margin-bottom: 30px;
+        color: rgb(196, 196, 196);
+    }
+}
