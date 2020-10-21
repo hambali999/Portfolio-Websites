@@ -1,0 +1,18 @@
+!ls
+
+!cat /proc/cpuinfo
+
+!cat /proc/meminfo
+
+cd
+
+exec
+
+mkdir
+
+proc
+
+cmatrix
+
+top
+
